@@ -1,0 +1,91 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+label {
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+
+input {
+    padding-left: 16px;
+}
+
+textarea {
+    padding-top: 8px;
+    padding-left: 16px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 408px;
+    padding: 24px;
+    margin: 0 auto;
+}
+
+.input-form-email {
+    width: 360px;
+    height: 40px;
+    margin-bottom: 8px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+}
+
+.input-form-email:hover {
+    border: 1px solid #000;
+}
+
+.input-form-email:active {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    border: 1px solid #808080;
+}
+
+.textarea-form-message {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    width: 360px;
+    height: 80px;
+}
+
+.textarea-form-message:hover {
+    border: 1px solid #000;
+}
+
+.textarea-form-message:active {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.btn-form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 95px;
+    height: 40px;
+    background-color: #4e75ff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border: none;
+}
+
+.btn-form-submit:hover,
+.btn-form-submit:focus {
+    background-color: #6c8cff;
+}
