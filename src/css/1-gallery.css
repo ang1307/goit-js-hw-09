@@ -1,47 +1,75 @@
-body {
-    font-family: Arial, sans-serif;
+@import "simplelightbox/dist/simple-lightbox.min.css";
+
+ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f9fa;
-    color: #212121;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    list-style: none;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-.gallery-item {
-    flex-basis: calc((100% - 48px) / 3);
-    max-width: 1440px;
-
-}
-
-.gallery-link {
-    display: block;
-    text-decoration: none;
+    padding: 24px 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-image {
-    width: 100%;
+    width: calc((100%-48px)/3);
     height: 200px;
-    cursor: pointer;
-    object-fit: cover;
-    transition: transform 0.2s;
 }
 
-.gallery-image:hover {
-    transform: scale(1.05);
-}
-
-.modal-img {
-    display: block;
-    width: 1112px;
+.classModal {
+    max-width: 1112px;
     height: 640px;
+    background-color: rgba(46, 47, 66, 0.8);
+    background-position: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: calc((100%-48px)/3);
+    height: 200px;
+}
+
+.classModal {
+    max-width: 1112px;
+    height: 640px;
+    background-color: rgba(46, 47, 66, 0.8);
+    background-position: center;
+}
+
+
+.sl-wrapper {
+    background: rgba(46, 47, 66, 0.8);
+}
+
+.sl-wrapper .sl-navigation button,
+.sl-wrapper .sl-counter,
+.sl-wrapper .sl-close {
+    color: #fff;
+}
+
+sl-wrapper .sl-counter,
+.sl-wrapper .sl-close {
+    font-size: 2rem;
+}
+
+.sl-wrapper .sl-navigation button {
+    font-size: 1rem;
 }
