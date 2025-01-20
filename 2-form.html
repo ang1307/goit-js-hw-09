@@ -6,32 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap"
-        rel="stylesheet" />
   <script type="module" crossorigin src="/vanilla-app-template/2-form.js"></script>
   <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/2-form-KgPH0mfh.css">
+  <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/2-form-BgDDN9KE.css">
+  <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/styles-ClhKy2Jr.css">
 </head>
 
 <body>
-    <a href="./index.html">
-        <p>go back</p>
-    </a>
-
-    <form class="feedback-form" autocomplete="off">
-        <label class="text">
-            Email
-            <input type="email" name="email" class="input" autofocus />
-        </label>
-        <label class="text">
-            Message
-            <textarea name="message" rows="8" class="input"></textarea>
-        </label>
-        <button type="submit">Submit</button>
-    </form>
+    <main>
+        <div class="container">
+            <a class="back-link" href="./index.html">Go back</a>
+            <h1 class="main-title">Form</h1>
+        </div>
+        <div>
+            <form class="feedback-form" autocomplete="off">
+                <label class="feedback-label">
+                    Email
+                    <input class="feedback-email" type="email" name="email" autofocus />
+                </label>
+                <label class="feedback-label">
+                    Message
+                    <textarea class="feedback-message" name="message" rows="8"></textarea>
+                </label>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
 
 </body>
 

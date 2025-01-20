@@ -6,13 +6,29 @@
     <link rel="icon" type="image/svg+xml" href="/vanilla-app-template/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
+  <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/styles-ClhKy2Jr.css">
 </head>
 
 <body>
-    <ul>
-        <li><a href="./1-gallery.html">1-gallery</a></li>
-        <li><a href="./2-form.html">2-form</a></li>
-    </ul>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a class="nav-logo" href="./index.html" aria-label="Site logo">
+                    <svg class="nav-logo-icon" width="100" height="30">
+                        <use href="/vanilla-app-template/assets/logo-CWKflIk4.svg"></use>
+                    </svg>
+                </a>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link {=$highlight-act}" href="./1-gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {=$highlight-curr}" href="./2-form.html">Form</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 </body>
 
 </html>
