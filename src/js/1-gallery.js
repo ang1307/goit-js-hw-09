@@ -1,6 +1,3 @@
-import SimpleLightbox from "simplelightbox";
-
-
 const images = [
   {
     preview:
@@ -67,20 +64,27 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
-console.log(gallery)
+const createGalLeryIteam = image => {
+  return `<li class="gallery-item">
+	<a class="gallery-link" href="${image.original}">
+		<img 
+			class="gallery-image" 
+			src="${image.preview}" 
+            alt="${image.description}"
+			/>
+	</a>
+</li>
+  `;
+};
 
-const galleryImages = images.map((image) =>
-  `<li class="gallery-item">
-            <a class="gallery-link" href="${image.original}">
-                <img
-                   class="gallery-image"
-                   src="${image.preview}"
-                   alt="${image.description}"
-                />
-            </a>
-       </li>`).join("");
+const imagesGalleryCard = images.map(el => createGalLeryIteam(el)).join('');
 
-gallery.innerHTML = galleryImages;
+const gallery = document.querySelector('.gallery');
+gallery.innerHTML = imagesGalleryCard;
 
-new SimpleLightbox(".gallery a", { captionsData: 'alt', captionDelay: 250 });
+import SimpleLightbox from 'simplelightbox';
+
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});

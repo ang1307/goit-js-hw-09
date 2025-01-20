@@ -1,54 +1,58 @@
-const feedbackForm = document.querySelector('.feedback-form');
-
+const feedbackFormEl = document.querySelector('.feedback-form');
 let formData = {
-    email: "",
-    message:""
+  email: '',
+  message: '',
 };
 
-const fillFormField = event => {
-    try {
-        const formDataFromLS = JSON.parse(localStorage.getItem("feedback-form-state"));
-        if (formDataFromLS === null) {
-            return;
-        }
-        formData = formDataFromLS;
-        console.log(formData);
-        for (const key in formDataFromLS) {
-            feedbackForm.elements[key].value = formDataFromLS[key]; 
-     }  
+const fillFormFilds = () => {
+  // перенесення з локального схов в інпути після перезавантаження
+  try {
+    const formDataFormLS = JSON.parse(
+      localStorage.getItem('feedback-form-data')
+    );
+
+    if (formDataFormLS === null) return;
+
+    formData = formDataFormLS;
+
+    for (const key in formDataFormLS) {
+      feedbackFormEl.elements[key].value = formDataFormLS[key];
     }
-    catch (err) {
-        console.log(err);
-    }
+  } catch (err) {
+    console.log(err);
+  }
 };
-fillFormField();
 
-const onFormFieldChange = event => {
-    const formFieldEl = event.target;
+fillFormFilds();
 
-    const fieldValue = formFieldEl.value;
-    const fieldName = formFieldEl.name;
+const onFormChange = event => {
+  // деструктиризація івенту
+  const { target: formFildEl } = event;
 
-    formData[fieldName] = fieldValue;
+  //   запис того що написано в інпуті
+  const fildValue = formFildEl.value;
+  const fieldName = formFildEl.name;
 
-    localStorage.setItem("feedback-form-state", JSON.stringify(formData));
-}
+  //   звернення за ключем/
+  formData[fieldName] = fildValue;
+
+  //   збереження в локальному сховищі
+  localStorage.setItem('feedback-form-data', JSON.stringify(formData));
+};
 
 const onFeedbackFormSubmit = event => {
-    event.preventDefault();
-  if (!(formData.email && formData.email.trim()) || !(formData.message && formData.message.trim())) {
-        alert('Fill please all fields');
-        return;
-    }
+  event.preventDefault();
 
-    console.log(formData);
+  if (Object.values(formData).some(value => !value.trim())) {
+    return alert('Будь ласка, заповніть всі поля форми!');
+  }
+  console.log('Форма відправлена:', formData);
 
-    formData = {};
-    const formEl = event.currentTarget;
-    
-    formEl.reset();
-    localStorage.removeItem("feedback-form-state");
-}
+  event.currentTarget.reset();
+  localStorage.removeItem('feedback-form-data');
+  formData = { email: '', message: '' };
+};
 
-feedbackForm.addEventListener("input", onFormFieldChange);
-feedbackForm.addEventListener("submit", onFeedbackFormSubmit);
+// подія при змінні данних
+feedbackFormEl.addEventListener('input', onFormChange);
+feedbackFormEl.addEventListener('submit', onFeedbackFormSubmit);
